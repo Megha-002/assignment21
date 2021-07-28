@@ -1,0 +1,41 @@
+public class SumOfPrimeNumbers 
+{  
+
+static boolean isPrime(int num)  
+{  
+if(num == 1)   
+{  
+return false;  
+}
+for (int i = 2; i*i <= num; i++)   
+{  
+if (num % i == 0)   
+{  
+return false;  
+} 
+} 
+return true;  
+}  
+ addPrime(int min, int max)  
+{  
+int sum = 0;   
+for (int i = max; i >= min; i--)   
+{  
+
+boolean prime = isPrime(i);  
+if (prime)   
+{  
+
+sum = sum + i;  
+}  
+} 
+return sum;  
+}  
+
+public static void main(String args[])  
+{  
+int min = 0, max = 50;  
+
+System.out.println("The sum of all the prime number between the given range is: " +addPrime(min, max));  
+}   
+}
